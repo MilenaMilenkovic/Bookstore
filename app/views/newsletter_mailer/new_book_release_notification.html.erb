@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div>
+      <h3>Book <%= @book.title %><h3>
+      <h5>by <%= @book.author %><b5>
+
+      now available at: <b> Bookstore </b>
+
+      <%= image_tag @book.cover_image_url  if @book.cover_image_url %>
+
+    </div>
+  </body>
+</html>

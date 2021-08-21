@@ -1,0 +1,78 @@
+# Fiction
+- name: Fiction
+# Fiction subcategories - Fantacy, Horror, Mystery, Romance, Science Fiction, Thriller and Suspense, Western
+- name: Fantacy
+  parent: Fiction
+- name: Horror
+  parent: Fiction
+- name: Mystery
+  parent: Fiction
+- name: Romance
+  parent: Fiction
+- name: Science Fiction
+  parent: Fiction
+- name: Thriller and Suspense
+  parent: Fiction
+- name: Western
+  parent: Fiction
+- name: Literaly Fiction
+  parent: Fiction
+# Fantacy subcategories
+- name: Alternative History
+  parent: Fantacy
+- name: Children's Story
+  parent: Fantacy
+- name: Comedy
+  parent: Fantacy
+- name: Contemporary
+  parent: Fantacy
+- name: Dark Fantasy
+  parent: Fantacy
+- name: Fairy Tale
+  parent: Fantacy
+# Horror subcategories
+- name: Comedy
+  parent: Horror
+- name: Extreme Horor
+  parent: Horror
+- name: Gothic
+  parent: Horror
+- name: Hauntic
+  parent: Horror
+- name: Historical
+  parent: Horror
+# Mystery subcategories
+- name: Cozy
+  parent: Mystery
+- name: Historical
+  parent: Mystery
+- name: Paranormal
+  parent: Mystery
+# Romance subcategories
+- name: Comedy
+  parent: Romance
+# Science Fiction subcategories
+- name: Aliens
+  parent: Science Fiction
+- name: Alternate History
+  parent: Science Fiction
+- name: Apocalyptic
+  parent: Science Fiction
+- name: Galactic Empire
+  parent: Science Fiction
+# Thriller and Suspense
+- name: Action
+  parent: Thriller and Suspense
+- name: Comedy
+  parent: Thriller and Suspense
+- name: Crime
+  parent: Thriller and Suspense
+- name: Disaster
+  parent: Thriller and Suspense
+- name: Historical
+  parent: Thriller and Suspense
+- name: Paranormal
+  parent: Thriller and Suspense
+# Western
+- name: Comedy
+  parent: Western

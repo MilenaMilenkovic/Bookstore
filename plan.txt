@@ -1,0 +1,24 @@
+1. Install mysql
+
+---------------------------------------------------
+brew install mysql (Install mysql)
+brew services start mysql (Start mysql)
+mysql_secure_installation (setup password)
+mysql -uroot -p
+---------------------------------------------------
+2. Install Ruby, bundler and Rails gem
+
+3. rails _6.0.0_ new bookstore -d mysql (Generate Rails project)
+
+4. Setup database.yml & ~/.bashrc
+   export BOOKSTORE_DATABASE_PASSWORD
+   export BOOKSTORE_DATABASE_NAME
+
+5. bundle exec rails db:create
+
+4. Setup user table and model
+5. Create PasswordValidation module - responsible for a password validation
+6. Create Authentication module (and install BCrypt) - responsible for authentication
+7. Create registration controller
+8. Create authentication controller
+9. Define methods for rendering
