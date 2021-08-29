@@ -7,7 +7,7 @@ module Api
           session[:user_id] = user.id
           render json: { message: 'User is successfully logged in.' }, status: :ok
         else
-          render json: { message: 'Invalid email or password' }, status: :bad_request
+          render json: { message: 'Invalid username or password.' }, status: :bad_request
         end
       end
 
@@ -19,7 +19,7 @@ module Api
       private
 
         def user
-          @user ||= User.find_by(email: params[:email])
+          @user ||= User.find_by(email: params[:username])
         end
     end
   end
