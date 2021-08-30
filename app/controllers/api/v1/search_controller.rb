@@ -12,7 +12,7 @@ module Api
         begin
           render json: paginated_interactor_list, status: :ok
         rescue InvalidSearchException
-          render json: { message: 'Invalid search parameters' }, status: :bad_request
+          render json: { message: 'Invalid book search parameters.' }, status: :bad_request
         end
       end
     end

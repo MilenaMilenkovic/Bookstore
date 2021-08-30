@@ -2,7 +2,7 @@ class CategoryDecorator < Decorator
   display_keys %i[name parent parents]
 
   def parent
-    subject.parent.slice(:id, :name)
+    subject.parent&.slice(:id, :name)
   end
 
   def parents
