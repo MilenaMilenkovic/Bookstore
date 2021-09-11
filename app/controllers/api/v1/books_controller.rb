@@ -16,6 +16,8 @@ module Api
 
       def create
         if new_object && interactor.save
+          NewsletterWorker.perform_async(interactor.subject.id)
+          
           render json: { message: 'Book is successfully created.' }, status: :ok
         else
           render_errors(interactor)

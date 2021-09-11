@@ -14,13 +14,4 @@ class Book < ApplicationRecord
 
     Book.where("MATCH (#{qk}) AGAINST (?)", q)
   end
-
-  # Hooks
-  after_create :notify_users
-
-  private
-
-  def notify_users
-    NewsletterWorker.perform_async(self.id)
-  end
 end

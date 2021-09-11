@@ -10,8 +10,9 @@
 
       now available at: <b> Bookstore </b>
 
-      <%= image_tag @book.cover_image_url  if @book.cover_image_url %>
-
+      <div>
+        <%= image_tag image_path(@book.cover_image_url) if @book.cover_image_url %>
+      </div>
     </div>
   </body>
 </html>
