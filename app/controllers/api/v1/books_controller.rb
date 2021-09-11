@@ -7,7 +7,7 @@ module Api
       before_action :validate_interactor, only: %i[show update destroy]
 
       def index
-        render json: { books: paginated_interactor_list, page: params[:page] }, status: :ok
+        render json: paginated_interactor_list, status: :ok
       end
 
       def show
@@ -38,7 +38,10 @@ module Api
       private
 
         def wrapped_list
-          @wrapped_list = (params[:category] && Book.category(params[:category])) || Book.all
+          @wrapped_list = begin
+            (params[:category] && Book.category(params[:category]).includes(category: :parent)) ||
+            Book.includes(category: :parent)
+          end
         end
 
         def validate_interactor

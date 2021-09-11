@@ -8,6 +8,7 @@ module Api
       def books
         @wrapped_class = Book
         @wrapped_list  = wrapped_class.search(params[:qk], params[:q])
+                                      .includes(category: :parent)
 
         begin
           render json: paginated_interactor_list, status: :ok
