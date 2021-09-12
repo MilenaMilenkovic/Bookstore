@@ -1,7 +1,8 @@
 module Api
   module V1
     class AuthenticationController < Api::V1::ApplicationController
-
+      before_action :require_valid_session, only: :logout
+      
       def login
         if user&.authenticate(params[:password])
           session[:user_id] = user.id

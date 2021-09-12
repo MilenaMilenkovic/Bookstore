@@ -10,11 +10,9 @@ module Api
         @wrapped_list  = wrapped_class.search(params[:qk], params[:q])
                                       .includes(category: :parent)
 
-        begin
-          render json: paginated_interactor_list, status: :ok
-        rescue InvalidSearchException
-          render json: { message: 'Invalid book search parameters.' }, status: :bad_request
-        end
+        render json: paginated_interactor_list, status: :ok
+      rescue Book::InvalidBooksSearchException
+        render json: { message: 'Invalid book search parameters.' }, status: :bad_request
       end
     end
   end

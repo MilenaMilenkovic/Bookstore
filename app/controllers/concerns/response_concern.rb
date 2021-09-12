@@ -12,11 +12,11 @@ module ResponseConcern
   end
 
   def render_errors(object)
-    render json: { messages: object.errors }, status: :bad_request
+    render json: { errors: object.errors }, status: :bad_request
   end
 
   def record_not_found
-    render json: { message: 'Record not found.' }, status: :bad_request
+    render json: { message: 'Record not found.' }, status: :not_found
   end
 
   def unauthorized
