@@ -7,10 +7,13 @@ class Book < ApplicationRecord
   belongs_to :category
 
   # Scopes
-  # Search category by name. NOTE: Category name is not unique. Example: Comedy (Fantacy) & Comedy (Romance)
+  # Search category by name. NOTE: Category name is not unique.
+  # Example: Comedy (Fantacy) & Comedy (Romance)
   scope :category, -> (category) { CategoryBooksQuery.call(category) }
   scope :search,   -> (qk, q) do
-    raise InvalidBooksSearchException unless ActiveRecord::Base.connection.column_exists?(Book.table_name, qk)
+    unless ActiveRecord::Base.connection.column_exists?(Book.table_name, qk)
+      raise InvalidBooksSearchException
+    end
 
     Book.where("MATCH (#{qk}) AGAINST (?)", q)
   end
