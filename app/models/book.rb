@@ -11,10 +11,18 @@ class Book < ApplicationRecord
   # Example: Comedy (Fantacy) & Comedy (Romance)
   scope :category, -> (category) { CategoryBooksQuery.call(category) }
   scope :search,   -> (qk, q) do
-    unless ActiveRecord::Base.connection.column_exists?(Book.table_name, qk)
-      raise InvalidBooksSearchException
+    case qk.to_sym
+    when :author
+      Book.where(author: q)
+      break
+    when :title
+      Book.where(title: q)
+      break
+    when :short_description
+      Book.where(short_description: q)
+      break
+    else
+      Book.none
     end
-
-    Book.where("MATCH (#{qk}) AGAINST (?)", q)
   end
 end
