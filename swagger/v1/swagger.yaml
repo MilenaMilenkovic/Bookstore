@@ -20,7 +20,7 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/400"
+                "$ref": "#/components/schemas/400_message"
       requestBody:
         content:
           application/json:
@@ -414,6 +414,13 @@ components:
           type: string
       example:
         message: Record not found.
+    '400_message':
+      type: object
+      properties:
+        message:
+          type: string
+      example:
+        message: Failure message.
     '400':
       type: object
       properties:
